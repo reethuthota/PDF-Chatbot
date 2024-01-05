@@ -10,7 +10,7 @@ from secret_key import openapi_key
 os.environ['OPENAI_API_KEY'] = openapi_key
 
 def load_chunk_persist_pdf() -> Chroma:
-    pdf_folder_path = "/Users/reethu/coding/Projects/PDF_Chatbot/Data"
+    pdf_folder_path = "/Users/reethu/coding/Projects/PDF-Chatbot/Data"
     documents = []
     for file in os.listdir(pdf_folder_path):
         if file.endswith('.pdf'):
@@ -35,7 +35,7 @@ def load_chunk_persist_pdf() -> Chroma:
 def create_agent_chain():
     model_name = "gpt-3.5-turbo"
     llm = ChatOpenAI(model_name=model_name)
-    chain = load_qa_chain(llm, chain_type="stuff")
+    chain = load_qa_chain(llm, chain_type="stuff", verbose=True)
     return chain
 
 def get_llm_response(query):
