@@ -6,7 +6,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
-from langchain.embeddings import SentenceTransformerEmbeddings
 from secret_key import openapi_key
 os.environ['OPENAI_API_KEY'] = openapi_key
 
@@ -44,7 +43,7 @@ def main():
         if user_question:
             docs = knowledge_base.similarity_search(user_question)
             
-            llm = OpenAI()
+            llm = OpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
             chain = load_qa_chain(llm, chain_type="stuff")
             response = chain.run(input_documents=docs, question=user_question)
             
