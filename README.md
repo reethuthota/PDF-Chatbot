@@ -47,7 +47,7 @@ Before running the application, ensure you have the necessary API keys for OpenA
    # secret_key.py
    openapi_key="YOUR_API_KEY_HERE"
    
-4. Download the json file from GCP and name it `credentials.json` file. Save this file in the project root directory.
+4. Download the json file from GCP and name the file as `credentials.json`. Save this file in the project root directory.
 5. Install the required dependencies using:
    ```bash
    pip install -r requirements.txt
