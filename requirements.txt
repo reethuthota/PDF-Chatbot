@@ -1,8 +1,8 @@
 python>=3.10.0
 langchain>=0.1.0
 streamlit>=1.29.0
-PyPDF2
-google-auth
-google-auth-oauthlib
-google-auth-httplib2
-google-api-python-client
+PyPDF2==3.0.1
+google-auth==2.26.2
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.114.0
