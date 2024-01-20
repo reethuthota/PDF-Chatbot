@@ -15,7 +15,8 @@ os.environ['OPENAI_API_KEY'] = openapi_key
 def main():
     st.set_page_config(page_title="Chat with multiple PDFs", page_icon=":books:")
     
-    st.subheader("Your documents")
+    st.title("Multi-PDF Chatbot 💬")
+    
     pdf_docs = st.file_uploader("Upload your PDFs here", type="pdf", accept_multiple_files=True)
    #if st.button("Process"):
     text = ""
@@ -50,7 +51,7 @@ def main():
             
             if want_translation == "Yes":
                 from_language = "English"
-                to_language = st.selectbox("Translate to", ("English", "French", "German", "Spanish", "Tamil", "Telugu", "Kannada", "Hindi"))
+                to_language = st.selectbox("Translate to", ("English", "French", "German", "Spanish", "Tamil", "Telugu", "Kannada", "Hindi"),index=None, placeholder="Choose a language")
                 
                 if from_language == to_language:
                     st.warning("Please select different languages for translation.")
